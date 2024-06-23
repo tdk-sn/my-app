@@ -21,6 +21,7 @@ const ZaikoPage = () => {
             <table>
                 <thead>
                     <tr>
+                        <th hidden>行ステータス</th>
                         <th>管理対象</th>
                         <th>品目</th>
                         <th>ステータス</th>
@@ -31,17 +32,19 @@ const ZaikoPage = () => {
                 <tbody>
                     {rows.map(row => (
                         <tr key={row.id}>
-                        <td><select name="" id=""></select></td>
-                        <td><input type="text" /></td>
-                        <td><select name="" id=""></select></td>
-                        <td><input type="text" readOnly /></td>
-                        <td><button onClick={() => handleDelRow(row.id)}>削除</button></td>
+                            <td hidden><label ></label></td>
+                            <td><select name="" id=""></select></td>
+                            <td><input type="text" /></td>
+                            <td><select name="" id=""></select></td>
+                            <td><input type="text" readOnly /></td>
+                            <td><button onClick={() => handleDelRow(row.id)}>削除</button></td>
                         </tr>
                     ))}
                 </tbody>
             </table>
             <div className={styles.btnArea}>
                 <button className={styles.btnAddRow} onClick={handleAddRow}>行追加</button>
+                <button className={styles.btnSearch}>検索</button>
                 <button className={styles.btnUpdate}>更新</button>
             </div>
             
