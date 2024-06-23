@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CryptoJS from 'crypto-js';
-import './LoginPage.css';
+import styles from './LoginPage.module.css';
 
 const LoginPage = () => {
     const initialValues = { username: "", password: "" };
@@ -69,12 +69,12 @@ const LoginPage = () => {
     };
   
     return (
-      <div className="formContainer">
+        <div className={styles.formContainer}>
         <form onSubmit={handleSubmit}>
           <h1>ログインフォーム</h1>
           <hr />
-          <div className="uiForm">
-            <div className="formField">
+          <div className={styles.uiForm}>
+            <div className={styles.formField}>
               <label>ユーザー名</label>
               <input
                 type="text"
@@ -84,8 +84,8 @@ const LoginPage = () => {
                 onChange={handleChange}
               />
             </div>
-            <p className="errorMsg">{formErrors.username}</p>
-            <div className="formField">
+            <p className={styles.errorMsg}>{formErrors.username}</p>
+            <div className={styles.formField}>
               <label>パスワード</label>
               <input
                 type="password"
@@ -95,9 +95,9 @@ const LoginPage = () => {
                 onChange={handleChange}
               />
             </div>
-            <p className="errorMsg">{formErrors.password}</p>
-            <button className="submitButton">ログイン</button>
-            {message && <p className="message">{message}</p>}
+            <p className={styles.errorMsg}>{formErrors.password}</p>
+            <button className={styles.submitButton}>ログイン</button>
+            {message && <p className={styles.message}>{message}</p>}
           </div>
         </form>
       </div>

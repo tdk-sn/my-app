@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ZaikoPage.css';
+import styles from './ZaikoPage.module.css';
 
 const ZaikoPage = () => {
     const [rows, setRows] = useState([{ id: 1 }]);
@@ -15,7 +15,7 @@ const ZaikoPage = () => {
     }
 
     return (
-        <div className="ZaikoPage">
+        <div className={styles.ZaikoPage}>
             <h1>おうちの在庫管理システム</h1>
             <hr />
             <table>
@@ -40,9 +40,9 @@ const ZaikoPage = () => {
                     ))}
                 </tbody>
             </table>
-            <div className="btnArea">
-                <button className="btnAddRow" onClick={handleAddRow}>行追加</button>
-                <button className="btnUpdate">更新</button>
+            <div className={styles.btnArea}>
+                <button className={styles.btnAddRow} onClick={handleAddRow}>行追加</button>
+                <button className={styles.btnUpdate}>更新</button>
             </div>
             
         </div>
